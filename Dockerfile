@@ -14,7 +14,7 @@ WORKDIR /yt2009
 USER node
 
 RUN npm install
-ENV YT2009_PORT=80 \
+ENV YT2009_PORT=90 \
     YT2009_ENV=dev \
     YT2009_IP=yt2009-site.onrender.com \
     YT2009_SSL=false \
