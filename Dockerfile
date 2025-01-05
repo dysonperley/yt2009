@@ -19,10 +19,11 @@ USER node
 # PLEASE READ THIS IT WILL SAVE YOU MUCH HASSLE
 # don't modify the environment variables here if you're hosting, those are the defaults and are not supposed to be changed unless you're a developer
 # you can instead set them when launching the container, this way you don't have to fork the repo or rebuild the container every time you want to change something
-# if someone has told you to do modify them here please ignore their advice and tell them they're wrong
+RUN npm install
 ENV YT2009_PORT=80 \
-    YT2009_ENV=dev \
-    YT2009_IP=yt2009-wx24.onrender.com \
+    YT2009_ENV=prod \
+    YT2009_IP=yt2009-wii-myw6.onrender.com \
+    YT2009_TOKENS="hTcpWktc" \
     YT2009_SSL=false \
     YT2009_SSLPORT=443 \
     YT2009_SSLPATH=/yt2009/cert.crt \
@@ -33,8 +34,8 @@ ENV YT2009_PORT=80 \
     YT2009_FALLBACK=false \
     YT2009_DISABLEMASTER=false \
     YT2009_RATELIMIT=false \
-    YT2009_AC=false \
-    YT2009_GDATA_AUTH=false
+    YT2009_AC=true \
+    YT2009_GDATA_AUTH=true
 
 RUN npm install && \
     ln -s /data/androiddata.json back/androiddata.json && \
